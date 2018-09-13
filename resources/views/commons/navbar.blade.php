@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>{!! link_to_route('tasks.create', '新規タスクの投稿') !!}</li>
-                    <li><a href="#">Signup</a></li>
+                    <li>{!! link_to_route('signup.get', 'Signup') !!}</li>
                     <li><a href="#">Login</a></li>
                 </ul>
             </div>
