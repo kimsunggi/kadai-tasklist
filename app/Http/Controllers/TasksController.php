@@ -140,9 +140,10 @@ class TasksController extends Controller
                     'content' => 'required|max:191',
                     ]);
                 
-                $task->status = $request->status;
-                $task->content = $request->content;
-                $task->save();
+                $request->user()->tasks()->update([
+                'status' => $request->status,
+                'content' => $request->content,
+                ]);
                 
                 return redirect('/');
             } else {
