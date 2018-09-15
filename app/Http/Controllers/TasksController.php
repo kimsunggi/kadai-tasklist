@@ -90,7 +90,7 @@ class TasksController extends Controller
                         'task' => $task,
                         ]);
                 } else {
-                    return redirect('/');
+                    return view('welcome');;
                 }
             
         }else {
@@ -114,7 +114,7 @@ class TasksController extends Controller
                         'task' => $task,
                      ]);
                 } else {
-                    return redirect('/');
+                    return view('welcome');
                 }
                 
         } else {
@@ -140,14 +140,14 @@ class TasksController extends Controller
                     'content' => 'required|max:191',
                     ]);
                 
-                $request->user()->tasks()->update([
-                'status' => $request->status,
-                'content' => $request->content,
-                ]);
+                
+                $task->status = $request->status;
+                $task->content = $request->content;
+                $task->save();
                 
                 return redirect('/');
             } else {
-                return redirect('/');
+                return view('welcome');
             }
             
         } else {
@@ -169,7 +169,7 @@ class TasksController extends Controller
                 $task->delete();
                 return redirect('/');
             } else {
-                return redirect('/');
+                return view('welcome');
             }
                 
         } else {
