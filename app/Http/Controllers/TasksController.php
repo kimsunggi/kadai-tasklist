@@ -25,7 +25,7 @@ class TasksController extends Controller
                 'tasks' => $tasks,
             ]);
         }else {
-            return view('welcome');
+            return redirect('login');
         }
     }
 
@@ -90,7 +90,7 @@ class TasksController extends Controller
                         'task' => $task,
                         ]);
                 } else {
-                    return view('welcome');;
+                    return redirect('/');
                 }
             
         }else {
@@ -114,7 +114,7 @@ class TasksController extends Controller
                         'task' => $task,
                      ]);
                 } else {
-                    return view('welcome');
+                    return redirect('/');
                 }
                 
         } else {
@@ -147,7 +147,7 @@ class TasksController extends Controller
                 
                 return redirect('/');
             } else {
-                return view('welcome');
+                return redirect('/');
             }
             
         } else {
@@ -169,7 +169,7 @@ class TasksController extends Controller
                 $task->delete();
                 return redirect('/');
             } else {
-                return view('welcome');
+                return redirect('/');
             }
                 
         } else {
